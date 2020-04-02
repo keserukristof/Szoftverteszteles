@@ -2,6 +2,7 @@ package hu.tigra.pti.geb.page
 
 import geb.Page
 import geb.module.RadioButtons
+import hu.tigra.pti.geb.module.ErrorMessages
 
 import java.awt.Checkbox
 
@@ -23,5 +24,6 @@ class RegisterPage extends Page {
         newslatter { $('input[id="newsletter"]').module(geb.module.Checkbox)}
         optin { $('input[id="optin"]').module(geb.module.Checkbox) }
         register { $('button[id="submitAccount"]')}
+        errors { $('div[class="alert alert-danger"] ol li')}
     }
 }

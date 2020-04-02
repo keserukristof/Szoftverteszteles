@@ -29,6 +29,6 @@ class RegisterSpec extends BaseSpec {
         registerPage.register.click()
 
         then: '5 hibaüzenet jelenik meg'
-        true
+        registerPage.errors.size() == 5
     }
 }
