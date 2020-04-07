@@ -25,5 +25,15 @@ class RegisterPage extends Page {
         optin { $('input[id="optin"]').module(geb.module.Checkbox) }
         register { $('button[id="submitAccount"]')}
         errors { $('div[class="alert alert-danger"] ol li')}
+
+        adressFirstName { $('input[id="firstname"]') }
+        adressLastName { $('input[id="lastname"]') }
+        adress { $('input[id = "address1"]') }
+        city { $('input[id="city"]') }
+        state { $('select[id="id_state"]') }
+        postalCode { $('input[id="postcode"]') }
+        country { $('select[id="id_country"]') }
+        mobilePhone { $('input[id="phone_mobile"]') }
+        alias { $('input[id="alias"]') }
     }
 }
