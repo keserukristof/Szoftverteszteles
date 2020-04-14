@@ -54,19 +54,31 @@ class OrderSpec extends BaseSpec {
         orderPage.header.text().contains("ADDRESSES")
 
         when: 'Rákattintok a "Proceed to checkout" gombra'
+        orderPage.adressesProceedToCheckout.click()
 
         then: 'Megjelenik a "SHIPPING" fejlécű oldal'
+        waitFor { orderPage }
+        orderPage.header.text().contains("SHIPPING")
 
         when: 'Bepipálom a checkboxot és rákattintok a "Proceed to checkout" gombra'
+        orderPage.termsOfService.check()
+        orderPage.shippingProceedToCheckout.click()
 
         then: 'Megjelenik a "PLEASE CHOOSE YOUR PAYMENT METHOD" fejlécű oldal'
+        waitFor { orderPage }
+        orderPage.header.text().contains("PLEASE CHOOSE YOUR PAYMENT METHOD")
 
         when: 'Kiválasztom a csekk fizetési módot'
+        orderPage.payByCheck.click()
 
         then: 'Megjelenik az "ORDER SUMMARY" fejlécű oldal'
+        waitFor { orderPage }
+        orderPage.header.text().contains("ORDER SUMMARY")
 
         when: 'Rákattintok az "I confirm my order" gombra'
+        orderPage.confirmOrder.click()
 
         then: 'Megjelenik a sikeres rendelés üzenete: "Your order on My Store is complete."'
+        orderPage.orderComplete.text().contains("Your order on My Store is complete.")
     }
 }

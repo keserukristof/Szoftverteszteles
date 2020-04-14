@@ -30,5 +30,15 @@ class OrderPage extends Page {
         plusButton(required: false) { $('a[id="cart_quantity_up_7_34_0_279051"]') }
 
         proceedToCheckout(required: false) { $('p[class="cart_navigation clearfix"] a:first-of-type') }
+        adressesProceedToCheckout(required: false) { $('p[class="cart_navigation clearfix"] button[class="button btn btn-default button-medium"]') }
+        shippingProceedToCheckout(required: false) { $('p[class="cart_navigation clearfix"] button[class="button btn btn-default standard-checkout button-medium"]')}
+        confirmOrder { $('p[class="cart_navigation clearfix"] button[class="button btn btn-default button-medium"]') }
+
+        termsOfService { $('input[id="cgv"]').module(Checkbox) }
+
+        payByCheck { $('p[class="payment_module"] a[class="cheque"]') }
+
+        orderComplete { $('div[id="center_column"] p:first-of-type') }
+
     }
 }
