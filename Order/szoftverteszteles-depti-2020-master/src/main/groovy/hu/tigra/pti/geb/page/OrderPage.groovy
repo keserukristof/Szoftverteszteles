@@ -28,5 +28,7 @@ class OrderPage extends Page {
 
 
         plusButton(required: false) { $('a[id="cart_quantity_up_7_34_0_279051"]') }
+
+        proceedToCheckout(required: false) { $('p[class="cart_navigation clearfix"] a:first-of-type') }
     }
 }

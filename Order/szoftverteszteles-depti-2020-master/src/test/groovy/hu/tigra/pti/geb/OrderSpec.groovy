@@ -47,8 +47,11 @@ class OrderSpec extends BaseSpec {
         orderPage.summaryFirstRow.quantity == 2
 
         when: 'Rákattintok a "Proceed to checkout" gombra'
-        
+        orderPage.proceedToCheckout.click()
+
         then: 'Megjelenik az "ADDRESSES" fejlécű oldal'
+        waitFor {orderPage}
+        orderPage.header.text().contains("ADDRESSES")
 
         when: 'Rákattintok a "Proceed to checkout" gombra'
 
