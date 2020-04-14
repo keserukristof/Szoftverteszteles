@@ -12,6 +12,5 @@ class MainPage extends Page {
     static content = {
         loginButton { $('a[class="login"]') }
         products { $('ul[id="homefeatured"]').find('li').collect { li -> li.module ProductCard } }
-        checkout { $('a[class="btn btn-default button button-medium"]') }
     }
 }
